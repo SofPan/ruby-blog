@@ -27,15 +27,16 @@ post3 = Post.create!({
 puts "Re-creating comments..."
 Comment.destroy_all
 
-post1.comments.create!({
+Comment.create!([{
   body: "Comment Loremp ipsum dolor sit amet 1",
-}
-)
-
-post2.comments.create!({
+  post_id: 1
+},
+{
   body: "Comment Loremp ipsum dolor sit amet 2",
-})
-
-post3.comments.create({
+  post_id: 2
+},
+{
   body: "Comment Loremp ipsum dolor sit amet 3",
-})
+  post_id: 3
+}
+])
