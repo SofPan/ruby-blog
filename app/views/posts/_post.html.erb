@@ -1,2 +1,5 @@
-<h2><%= post.title %></h2>
-<p><%= post.body %></p>
+<%= link_to post_path(post) do %>
+    <h2>
+      <span><%= post.title %></span>
+    </h2>
+<% end%>
