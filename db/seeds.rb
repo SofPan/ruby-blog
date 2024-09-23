@@ -26,13 +26,13 @@ Post.create!([{
 ])
 
 Comment.create!([{
-  body: "Loremp ipsum dolor sit amet 1"
+  body: "Comment Loremp ipsum dolor sit amet 1"
 },
 {
-  body: "Loremp ipsum dolor sit amet 2"
+  body: "Comment Loremp ipsum dolor sit amet 2"
 },
 {
-  body: "Loremp ipsum dolor sit amet 3"
+  body: "Comment Loremp ipsum dolor sit amet 3"
 },
 ])
 
