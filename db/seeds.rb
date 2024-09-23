@@ -1,38 +1,41 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+puts "Seeding data..."
+
+unless Rails.env.development?
+  puts "Development seeds only (for now)!"
+  exit 0
+end
+
+puts "Re-creating Posts..."
 
 Post.destroy_all
-Comment.destroy_all
 
-Post.create!([{
+post1 = Post.create!({
   title: "THis blog is lit!",
   body: "Loremp ipsum dolor sit amet 1"
-},
-{
+})
+
+post2 = Post.create!({
   title: "Another post!",
   body: "Loremp ipsum dolor sit amet 2"
-},
-{
+})
+
+post3 = Post.create!({
   title: "Another!",
   body: "Loremp ipsum dolor sit amet 3"
-},
-])
+})
 
-Comment.create!([{
-  body: "Comment Loremp ipsum dolor sit amet 1"
-},
-{
-  body: "Comment Loremp ipsum dolor sit amet 2"
-},
-{
-  body: "Comment Loremp ipsum dolor sit amet 3"
-},
-])
+puts "Re-creating comments..."
+Comment.destroy_all
 
+post1.comments.create!({
+  body: "Comment Loremp ipsum dolor sit amet 1",
+}
+)
+
+post2.comments.create!({
+  body: "Comment Loremp ipsum dolor sit amet 2",
+})
+
+post3.comments.create({
+  body: "Comment Loremp ipsum dolor sit amet 3",
+})
