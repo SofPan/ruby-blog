@@ -14,6 +14,17 @@
  *= require_self
  */
 
-body{
-  background: orange;
+.truncate {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(transparent 30px, rgba(255, 255, 255, 0.8));
+  }
 }
