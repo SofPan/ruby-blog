@@ -28,3 +28,27 @@
     background: linear-gradient(transparent 30px, rgba(255, 255, 255, 0.8));
   }
 }
+
+.hero{
+  height: 50vh;
+  width: 85vw;
+  margin: 0 auto;
+  background-color: darkgreen;
+  color: white;
+  padding: 60px;
+  &.small{
+    height: 25vh;
+    padding: 24px;
+  }
+}
+
+.nav{
+  &bar{
+    width: 85vw;
+    margin: 0 auto;
+    height: 5vh;
+    padding: 24px;
+    background-color: darkred;
+    color: white;
+  }
+}
